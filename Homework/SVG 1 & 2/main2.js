@@ -5,17 +5,19 @@ function changeColor(id, color) {
 
 }
 
+
+
 function Choose_Color(color) {
 	if (color > 65)
-		return "#006d2c";
+		return "#08519c";
 	else if (color > 35)
-		return "#2ca25f";
+		return "#3182bd";
 	else if (color > 25)
-		return "#66c2a4";
+		return "#6baed6";
 	else if (color > 15)
-		return "#b2e2e2";
+		return "#bdd7e7";
 	else
-		return "#edf8fb";
+		return "#eff3ff";
 
 }
 	//roep changecolor aan voor alle landen en geef ze een kleur tussen de bandbreedtes 

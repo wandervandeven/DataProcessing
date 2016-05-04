@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
+    
+    
     <title>SVG Map</title>
     <link rel="stylesheet" type="text/css" href="svg.css"/>
     <script src="main2.js"></script>
   </head>
 
   <body>
+    <h1>UEFA punten per Europees land</h1>
     <svg xmlns="http://www.w3.org/2000/svg" height="442.84" id="svg2985" version="1.1" viewBox="1400 150 400 530" width="863.21002">
       <title>SVG Map</title>
       <defs id="defs2987"/>
+
+      
 
       <g id="fra">
         <title>France</title>
@@ -199,12 +204,18 @@
         <title>Ukraine</title>
       </path>
     </svg>
-    <textarea id = 'data'>
+    <textarea id = 'data' visibility: hidden>
       {
         "countries": [
         {"name": "Spain", "points": "100.713"}, {"name": "Germany", "points": "78.891"}, {"name": "United Kingdom", "points": "74.784"}, {"name": "Italy", "points": "70.439"}, {"name": "Portugal", "points": "52.915"}, {"name": "France", "points": "52.582"}, {"name": "Ukraine", "points": "43.683"}, {"name": "Belgium", "points": "40"}, {"name": "Netherlands", "points": "35.563"}, {"name": "Switzerland", "points": "33.775"}, {"name": "Czech Republic", "points": "32.925"}, {"name": "Greece", "points": "29.7"}, {"name": "Romania", "points": "25.383"}, {"name": "Austria", "points": "25.1"}, {"name": "Croatia", "points": "23.875"}, {"name": "Poland", "points": "22.5"}, {"name": "Belarus", "points": "20"}, {"name": "Sweden", "points": "19.875"}, {"name": "Norway", "points": "19.25"}, {"name": "Denmark", "points": "18.6"}, {"name": "Bulgaria", "points": "13.125"}, {"name": "Slovenia", "points": "13.125"}, {"name": "Slovakia", "points": "12"}, {"name": "Hungary", "points": "9.875"}, {"name": "Moldova", "points": "9.125"}, {"name": "Iceland", "points": "8.75"}, {"name": "Finland", "points": "7.4"}, {"name": "Bosnia and Herzegovina", "points": "7.125"}, {"name": "Albania", "points": "6.625"}, {"name": "Macedonia", "points": "6"}, {"name": "Ireland", "points": "5.45"}, {"name": "Latvia", "points": "5.375"}, {"name": "Lithuania", "points": "4.625"}, {"name": "Estonia", "points": "4.25"} 
         ]
       }  
-    </textarea>  
+    </textarea>
+
+    <div style="position: relative;background-color: white; width: 800px; height: 40px;">    
+      <div style="position: absolute; bottom: 5px; background-color: white">
+      Dit is een representatie van het aantal UEFA punten dat elk Europees land bezit. Van enkele landen is geen data, deze landen worden met zwart ingekleurd. De landen waarvan wel data is worden ingekleurd met de blauwe kleur van de UEFA. Er is gekozen om deze minder transparant en donkerder te maken naarmate een land meer UEFA punten heeft. Het verschil in kleur wordt bepaald door het aantal af te dragen clubs per land naar het Europese speelveld. Landen met dezelfde kleur mogen evenveel clubs afdragen naar het Europese speelveld. 
+      </div>
+    </div>  
   </body>
 </html>
