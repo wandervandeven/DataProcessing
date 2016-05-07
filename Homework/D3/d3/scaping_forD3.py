@@ -7,19 +7,19 @@ import json
 countries_list = []
 
 # Open the workbook
-with open ('FIFAranking2.csv', 'rU') as f:
+with open ('Meatconsumption.csv', 'rU') as f:
 	reader = csv.reader(f, delimiter=';')
 	# Iterate through rows, returning each as a list that you can index:
 	for row in reader:
 		countries = OrderedDict()
-		countries['points'] = row[0]
-		countries['country'] = row[1]
+		countries['country'] = row[0]
+		countries['points'] = row[1]
 	 	
 		countries_list.append(countries)
 
 j = json.dumps(countries_list)
 # Write to file
-with open('barchart.json', 'w') as f:
+with open('meatconsumption2.json', 'w') as f:
     f.write(j)
 
  

@@ -1,0 +1,718 @@
+[
+  {
+    "Country": "Algeria",
+    "meat": 18.3
+  },
+  {
+    "Country": "American Samoa",
+    "meat": 24.9
+  },
+  {
+    "Country": "Angola",
+    "meat": 19
+  },
+  {
+    "Country": "Antigua and Barbuda",
+    "meat": 56
+  },
+  {
+    "Country": "Argentina",
+    "meat": 97.6
+  },
+  {
+    "Country": "Armenia",
+    "meat": 27.7
+  },
+  {
+    "Country": "Austria",
+    "meat": 94.1
+  },
+  {
+    "Country": "Azerbaijan",
+    "meat": 15.9
+  },
+  {
+    "Country": "Bahamas, The",
+    "meat": 123.6
+  },
+  {
+    "Country": "Bahrain",
+    "meat": 70.7
+  },
+  {
+    "Country": "Bangladesh",
+    "meat": 3.1
+  },
+  {
+    "Country": "Barbados",
+    "meat": 88.7
+  },
+  {
+    "Country": "Belarus",
+    "meat": 58.6
+  },
+  {
+    "Country": "Belgium",
+    "meat": 86.1
+  },
+  {
+    "Country": "Belize",
+    "meat": 74.7
+  },
+  {
+    "Country": "Benin",
+    "meat": 16.2
+  },
+  {
+    "Country": "Bhutan",
+    "meat": 3
+  },
+  {
+    "Country": "Bolivia",
+    "meat": 50
+  },
+  {
+    "Country": "Bosnia and Herzegovina",
+    "meat": 21.4
+  },
+  {
+    "Country": "Botswana",
+    "meat": 27.3
+  },
+  {
+    "Country": "Brazil",
+    "meat": 82.4
+  },
+  {
+    "Country": "Brunei",
+    "meat": 56.4
+  },
+  {
+    "Country": "Bulgaria",
+    "meat": 69.4
+  },
+  {
+    "Country": "Burkina Faso",
+    "meat": 11.2
+  },
+  {
+    "Country": "Burundi",
+    "meat": 3.5
+  },
+  {
+    "Country": "Cambodia",
+    "meat": 13.9
+  },
+  {
+    "Country": "Cameroon",
+    "meat": 14.4
+  },
+  {
+    "Country": "Canada",
+    "meat": 108.1
+  },
+  {
+    "Country": "Cape Verde",
+    "meat": 26.3
+  },
+  {
+    "Country": "C�te d'Ivoire (Ivory Coast)",
+    "meat": 11.3
+  },
+  {
+    "Country": "Central African Rep",
+    "meat": 28
+  },
+  {
+    "Country": "Chad",
+    "meat": 14.3
+  },
+  {
+    "Country": "Chile",
+    "meat": 66.4
+  },
+  {
+    "Country": "China",
+    "meat": 52.4
+  },
+  {
+    "Country": "Colombia",
+    "meat": 33.9
+  },
+  {
+    "Country": "Comoros",
+    "meat": 7.6
+  },
+  {
+    "Country": "Congo (Brazzaville)",
+    "meat": 13.3
+  },
+  {
+    "Country": "Congo, Dem Rep",
+    "meat": 4.8
+  },
+  {
+    "Country": "Costa Rica",
+    "meat": 40.4
+  },
+  {
+    "Country": "Croatia",
+    "meat": 49.9
+  },
+  {
+    "Country": "Cuba",
+    "meat": 32.2
+  },
+  {
+    "Country": "Cyprus",
+    "meat": 131.3
+  },
+  {
+    "Country": "Czech Rep",
+    "meat": 77.3
+  },
+  {
+    "Country": "Denmark",
+    "meat": 145.9
+  },
+  {
+    "Country": "Djibouti",
+    "meat": 17.1
+  },
+  {
+    "Country": "Dominica",
+    "meat": 67.1
+  },
+  {
+    "Country": "Dominican Rep",
+    "meat": 37.8
+  },
+  {
+    "Country": "Ecuador",
+    "meat": 45
+  },
+  {
+    "Country": "Egypt",
+    "meat": 22.5
+  },
+  {
+    "Country": "El Salvador",
+    "meat": 21.4
+  },
+  {
+    "Country": "Estonia",
+    "meat": 67.4
+  },
+  {
+    "Country": "Ethiopia",
+    "meat": 7.9
+  },
+  {
+    "Country": "Faeroe Islands",
+    "meat": 86.4
+  },
+  {
+    "Country": "Fiji",
+    "meat": 39.1
+  },
+  {
+    "Country": "Finland",
+    "meat": 67.4
+  },
+  {
+    "Country": "France",
+    "meat": 101.1
+  },
+  {
+    "Country": "French Guiana",
+    "meat": 13.2
+  },
+  {
+    "Country": "French Polynesia",
+    "meat": 112.2
+  },
+  {
+    "Country": "Gabon",
+    "meat": 46
+  },
+  {
+    "Country": "Gambia, The",
+    "meat": 5.2
+  },
+  {
+    "Country": "Georgia",
+    "meat": 26
+  },
+  {
+    "Country": "Germany",
+    "meat": 82.1
+  },
+  {
+    "Country": "Ghana",
+    "meat": 9.9
+  },
+  {
+    "Country": "Greece",
+    "meat": 78.7
+  },
+  {
+    "Country": "Greenland",
+    "meat": 113.8
+  },
+  {
+    "Country": "Grenada",
+    "meat": 97
+  },
+  {
+    "Country": "Guadeloupe",
+    "meat": 12.7
+  },
+  {
+    "Country": "Guam",
+    "meat": 52.6
+  },
+  {
+    "Country": "Guatemala",
+    "meat": 23.8
+  },
+  {
+    "Country": "Guinea",
+    "meat": 6.5
+  },
+  {
+    "Country": "Guinea-Bissau",
+    "meat": 13
+  },
+  {
+    "Country": "Guyana",
+    "meat": 31.8
+  },
+  {
+    "Country": "Haiti",
+    "meat": 15.3
+  },
+  {
+    "Country": "Honduras",
+    "meat": 24.7
+  },
+  {
+    "Country": "Hungary",
+    "meat": 100.7
+  },
+  {
+    "Country": "Iceland",
+    "meat": 84.8
+  },
+  {
+    "Country": "India",
+    "meat": 5.2
+  },
+  {
+    "Country": "Indonesia",
+    "meat": 8.3
+  },
+  {
+    "Country": "Iran",
+    "meat": 23.1
+  },
+  {
+    "Country": "Ireland",
+    "meat": 106.3
+  },
+  {
+    "Country": "Israel",
+    "meat": 97.1
+  },
+  {
+    "Country": "Italy",
+    "meat": 90.4
+  },
+  {
+    "Country": "Jamaica",
+    "meat": 56.8
+  },
+  {
+    "Country": "Japan",
+    "meat": 45.9
+  },
+  {
+    "Country": "Jordan",
+    "meat": 29.8
+  },
+  {
+    "Country": "Kazakhstan",
+    "meat": 44.8
+  },
+  {
+    "Country": "Kenya",
+    "meat": 14.3
+  },
+  {
+    "Country": "Korea, North",
+    "meat": 10.8
+  },
+  {
+    "Country": "Korea, South",
+    "meat": 48
+  },
+  {
+    "Country": "Kuwait",
+    "meat": 60.2
+  },
+  {
+    "Country": "Kyrgyzstan",
+    "meat": 39
+  },
+  {
+    "Country": "Lao People's Dem Rep",
+    "meat": 15
+  },
+  {
+    "Country": "Latvia",
+    "meat": 45.7
+  },
+  {
+    "Country": "Lebanon",
+    "meat": 63.1
+  },
+  {
+    "Country": "Lesotho",
+    "meat": 15.4
+  },
+  {
+    "Country": "Liberia",
+    "meat": 7.9
+  },
+  {
+    "Country": "Libya",
+    "meat": 28.6
+  },
+  {
+    "Country": "Lithuania",
+    "meat": 49.5
+  },
+  {
+    "Country": "Luxembourg",
+    "meat": 141.7
+  },
+  {
+    "Country": "Macedonia",
+    "meat": 35.4
+  },
+  {
+    "Country": "Madagascar",
+    "meat": 17.6
+  },
+  {
+    "Country": "Malawi",
+    "meat": 5.1
+  },
+  {
+    "Country": "Malaysia",
+    "meat": 50.9
+  },
+  {
+    "Country": "Maldives",
+    "meat": 16.6
+  },
+  {
+    "Country": "Mali",
+    "meat": 19
+  },
+  {
+    "Country": "Malta",
+    "meat": 86.9
+  },
+  {
+    "Country": "Martinique",
+    "meat": 13.9
+  },
+  {
+    "Country": "Mauritania",
+    "meat": 29.9
+  },
+  {
+    "Country": "Mexico",
+    "meat": 58.6
+  },
+  {
+    "Country": "Moldova, Rep",
+    "meat": 22.7
+  },
+  {
+    "Country": "Mongolia",
+    "meat": 108.8
+  },
+  {
+    "Country": "Morocco",
+    "meat": 20.6
+  },
+  {
+    "Country": "Mozambique",
+    "meat": 5.6
+  },
+  {
+    "Country": "Burma (Myanmar)",
+    "meat": 10.7
+  },
+  {
+    "Country": "Namibia",
+    "meat": 34
+  },
+  {
+    "Country": "Nepal",
+    "meat": 10
+  },
+  {
+    "Country": "Netherlands",
+    "meat": 89.3
+  },
+  {
+    "Country": "Netherlands Antilles",
+    "meat": 73.3
+  },
+  {
+    "Country": "New Caledonia",
+    "meat": 76.6
+  },
+  {
+    "Country": "New Zealand",
+    "meat": 142.1
+  },
+  {
+    "Country": "Nicaragua",
+    "meat": 14.9
+  },
+  {
+    "Country": "Niger",
+    "meat": 11.2
+  },
+  {
+    "Country": "Nigeria",
+    "meat": 8.6
+  },
+  {
+    "Country": "Norway",
+    "meat": 61.7
+  },
+  {
+    "Country": "Oman",
+    "meat": 49.8
+  },
+  {
+    "Country": "Pakistan",
+    "meat": 12.3
+  },
+  {
+    "Country": "Panama",
+    "meat": 54.5
+  },
+  {
+    "Country": "Papua New Guinea",
+    "meat": 73
+  },
+  {
+    "Country": "Paraguay",
+    "meat": 70.3
+  },
+  {
+    "Country": "Peru",
+    "meat": 34.5
+  },
+  {
+    "Country": "Philippines",
+    "meat": 31.1
+  },
+  {
+    "Country": "Poland",
+    "meat": 78.1
+  },
+  {
+    "Country": "Portugal",
+    "meat": 91.1
+  },
+  {
+    "Country": "Qatar",
+    "meat": 90.5
+  },
+  {
+    "Country": "Reunion",
+    "meat": 46.8
+  },
+  {
+    "Country": "Romania",
+    "meat": 54.5
+  },
+  {
+    "Country": "Russia",
+    "meat": 51
+  },
+  {
+    "Country": "Rwanda",
+    "meat": 4.4
+  },
+  {
+    "Country": "Saint Kitts and Nevis",
+    "meat": 99.3
+  },
+  {
+    "Country": "Samoa",
+    "meat": 82.6
+  },
+  {
+    "Country": "Saudi Arabia",
+    "meat": 44.6
+  },
+  {
+    "Country": "Senegal",
+    "meat": 17.7
+  },
+  {
+    "Country": "Former Serbia and Montenegro",
+    "meat": 77.6
+  },
+  {
+    "Country": "Seychelles",
+    "meat": 51.1
+  },
+  {
+    "Country": "Sierra Leone",
+    "meat": 6.1
+  },
+  {
+    "Country": "Singapore",
+    "meat": 71.1
+  },
+  {
+    "Country": "Slovakia",
+    "meat": 67.4
+  },
+  {
+    "Country": "Slovenia",
+    "meat": 88
+  },
+  {
+    "Country": "South Africa",
+    "meat": 39
+  },
+  {
+    "Country": "Spain",
+    "meat": 118.6
+  },
+  {
+    "Country": "Sri Lanka",
+    "meat": 6.6
+  },
+  {
+    "Country": "St. Lucia",
+    "meat": 124.1
+  },
+  {
+    "Country": "St. Vincent/Grenadines",
+    "meat": 79.1
+  },
+  {
+    "Country": "Sudan",
+    "meat": 21
+  },
+  {
+    "Country": "Swaziland",
+    "meat": 34.2
+  },
+  {
+    "Country": "Sweden",
+    "meat": 76.1
+  },
+  {
+    "Country": "Switzerland",
+    "meat": 72.9
+  },
+  {
+    "Country": "Syria",
+    "meat": 21.2
+  },
+  {
+    "Country": "Tajikistan",
+    "meat": 8.7
+  },
+  {
+    "Country": "Tanzania",
+    "meat": 10
+  },
+  {
+    "Country": "Thailand",
+    "meat": 27.9
+  },
+  {
+    "Country": "Togo",
+    "meat": 8.5
+  },
+  {
+    "Country": "Trinidad and Tobago",
+    "meat": 57.8
+  },
+  {
+    "Country": "Tunisia",
+    "meat": 25.5
+  },
+  {
+    "Country": "Turkey",
+    "meat": 19.3
+  },
+  {
+    "Country": "Uganda",
+    "meat": 11.7
+  },
+  {
+    "Country": "Ukraine",
+    "meat": 32.3
+  },
+  {
+    "Country": "United Arab Emirates",
+    "meat": 74.4
+  },
+  {
+    "Country": "United Kingdom",
+    "meat": 79.6
+  },
+  {
+    "Country": "United States",
+    "meat": 124.8
+  },
+  {
+    "Country": "Uruguay",
+    "meat": 98.6
+  },
+  {
+    "Country": "Uzbekistan",
+    "meat": 20.7
+  },
+  {
+    "Country": "Vanuatu",
+    "meat": 32.6
+  },
+  {
+    "Country": "Venezuela",
+    "meat": 56.6
+  },
+  {
+    "Country": "Vietnam",
+    "meat": 28.6
+  },
+  {
+    "Country": "Virgin Islands",
+    "meat": 6.6
+  },
+  {
+    "Country": "Yemen",
+    "meat": 14.7
+  },
+  {
+    "Country": "Zambia",
+    "meat": 11.9
+  },
+  {
+    "Country": "Zimbabwe",
+    "meat": 15.2
+  }
+]
