@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<meta charset="utf-8">
+<style>
+
+body {
+  font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path {
+  display: none;
+}
+
+.line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+}
+
+.chart rect {
+  fill: steelblue;
+}
+
+.chart text {
+  fill: white;
+  font: 10px sans-serif;
+  text-anchor: end;
+}
+
+</style>
+
+
+
+
+
+<html>
+    <head>
+        <h1><center>International Students per Country per Year<center></h1>
+        
+        
+        
+    </head>
+    <body>
+        
+        
+        <!-- Datamaps Source -->
+        <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+        <script src="slider.js"></script>
+        <script src="topojson.js"></script>
+        <script src="world.js"></script>
+        <svg class="chart"></svg>
+        <div id="container1" style="height: 500px; width: 960px"></div>
+
+        <script src="europa_students.js"></script>
+        <h2>Slide to assign new values to the js variable 'a'</h2>
+        
+        <input id="slide" type="range" min="2003" max="2012" value="2003" step="3">
+        <div id="sliderAmount"></div>
+        <div id="chartContainer" style="height:300px; width:100%;"></div>
+        
+        <input type="checkbox" class="switch" id="cb" />
+        <label for="cb"></label>
+
+        
+          
+    </body>
+</html>
+
+
+
+
+
+

@@ -1,6 +1,7 @@
+//Wander van de Ven
+//10470476
 
-
-
+//variable of all country codes
 var country_codes = [
       ["af", "AFG", "Afghanistan"],
       ["ax", "ALA", "Åland Islands"],
@@ -253,91 +254,235 @@ var country_codes = [
       ["zw", "ZWE", "Zimbabwe"]
     ];
 
-console.log(country_codes[1][2])
+//all countrycodes with available data
+countries = ["AUT", "BEL", "BGR", "CYP", "CZE", "DEU", "DNK", "ESP", "EST", "FIN", "FRA", "GBR", "GRC", "HRV",
+"HUN", "IRL", "ISL", "ITA", "LIE", "LTU", "LUX", "LVA", "MLT", "NLD", "NOR", "POL", "PRT", "ROU", "SVK", 
+"SVN", "SWE", "TUR"];
 
-var full_data = {};
 
-var data; // a global
 
-d3.json("meat_consumption.json", function(error, json) {
+//to be used variable
+var data;
+
+d3.json("students_ready.json", function(error, json) {
   if (error) return console.warn(error);
   data = json;
   
+      //all variables to be used
+      var year_2003_in = []
+      var year_2006_in = []
+      var year_2009_in = []
+      var year_2012_in = []
 
-      for (i = 0; i < data.length; i++)
-      {
-            if (data[i].meat > 120)
-                  data[i]["fillKey"] = '7';
-            else if (data[i].meat > 105)
-                  data[i]["fillKey"] = '6';
-            else if (data[i].meat > 85)
-                  data[i]["fillKey"] = '5';
-            else if (data[i].meat > 65)
-                  data[i]["fillKey"] = '4';
-            else if (data[i].meat > 45)
-                  data[i]["fillKey"] = '3';
-            else if (data[i].meat > 25)
-                  data[i]["fillKey"] = '2';
-            else
-                  data[i]["fillKey"] = '1';
-      }
-
-
-      //append de countrycode in de lijst
+      //go through all countries out of json array
       for (i = 0; i < data.length; i++)
       { 
-        //ga door de lijst van alle landen (met countrycodes)
+        //go through all countries with countrycodes
         for (j = 0; j < country_codes.length; j++)
         { 
-          //als landnamen overeenkomen  
-          if (data[i].Country === country_codes[j][2])
+          //if country names match, 
+          if (data[i].country === country_codes[j][2])
           {
-            //neem de kleur
-            full_data[country_codes[j][1]] = data[i];
+            //update variables
+            year_2003_in[country_codes[j][1]] = {in_year: data[i].in_2003};
+
+            year_2006_in[country_codes[j][1]] = {in_year: data[i].in_2006};
+
+            year_2009_in[country_codes[j][1]] = {in_year: data[i].in_2009};
+
+            year_2012_in[country_codes[j][1]] = {in_year: data[i].in_2012};
+
           }
         }
       }
 
+ 
+
+   
+ 
+//function to give every datapoint a fillkey
+function fill_dec(dataset){
+      console.log(dataset.length)
+      for (i = 0; i < countries.length; i++) {
+            if (dataset[countries[i]].in_year > 120)
+                  dataset[countries[i]]["fillKey"] = '7';    
+            else if (dataset[countries[i]].in_year > 80)
+                  dataset[countries[i]]["fillKey"] = '6';
+            else if (dataset[countries[i]].in_year > 65)
+                  dataset[countries[i]]["fillKey"] = '5';
+            else if (dataset[countries[i]].in_year > 50)
+                  dataset[countries[i]]["fillKey"] = '4';
+            else if (dataset[countries[i]].in_year > 35)
+                  dataset[countries[i]]["fillKey"] = '3';
+            else if (dataset[countries[i]].in_year > 25)
+                  dataset[countries[i]]["fillKey"] = '2';
+            else if (dataset[countries[i]].in_year > 1)
+                  dataset[countries[i]]["fillKey"] = '1';
+      // console.log(dataset)
+      }
+
+}
+
+//default year for data
+temp = year_2003_in;
+fill_dec(temp)    
+
+//create map centered at Europe
+  var graph = new Datamap({
+          element: document.getElementById("container1"),
+          projection: 'mercator',
+          setProjection: function(element) {
+            var projection = d3.geo.equirectangular()
+              .center([10, 50])
+              .rotate([4.4, 0])
+              .scale(600)
+              .translate([element.offsetWidth / 2, element.offsetHeight / 2]);
+            var path = d3.geo.path()
+              .projection(projection);
+            return {path: path, projection: projection};  
+          },
+          // create tooltip
+          geographyConfig: {
+            highlightBorderColor: '#bada55',
+            popupTemplate: function(geography, data) {
+              return '<div class="hoverinfo"><b>' + geography.properties.name + '</b></br> Number of Students: ' +  data.in_year + ' '
+            },
+          highlightBorderWidth: 3
+          },
+          //fill scale
+          fills: {
+              '1' : "#eff3ff",
+              '2' : '#c6dbef',
+              '3' : '#9ecae1',
+              '4' : '#6baed6',
+              '5' : '#4292c6',
+              '6' : '#2171b5',
+              '7' : '#084594',
+              defaultFill: 'black' 
+           },
+           data: temp,
+           //when a country is clicked, call function MakeBarChart
+           done: function(datamap) {
+              datamap.svg.selectAll('.datamaps-subunit').on('click', function(geography) {
+                MakeBarChart(geography.id)
+           });
+          }
+    });
 
 
-      console.log(data[1].meat);
-      //maak map aan
-      $("#container1").datamap({
-         scope: 'europe',
-         geography_config: {
-           borderColor: 'rgba(255,255,255,0.3)',
-           //highlight het land
-           highlightFillColor: 'orange',
-           //highlight om het land
-           highlightBorderColor: 'rgba(0,0,0,0.5)',
-           //textvak invoegen
-           popupTemplate: _.template([
-             '<div class="hoverinfo">',
-             '<% if (data.Country) { } %>',
-             '<b> <%= geography.properties.name %> </b> <br>',
-             'Meatconsumption: <%= data.meat %><br/> <% } %>',
-             '<% if (data.meat) { %>',
-             
-             
-             
-             '</div>'
-            ].join('') )
-         },
-        //fill per schaal
-        fills: {
-            '1' : "#fff5f0",
-            '2' : '#fee0d2',
-            '3' : '##fcbba1',
-            '4' : '#fc9272',
-            '5' : '#fb6a4a',
-            '6' : '#ef3b2c',
-            '7' : '#67000d',
-            defaultFill: 'black' 
-         },
-         data: full_data
-         });
+var dataset = 0;
+var slide = document.getElementById('slide'),
+    sliderDiv = document.getElementById("sliderAmount");
+
+//on change of slider, refill the countries with colours
+slide.onchange = function() { 
+    sliderDiv.innerHTML = this.value    
+    
+    //check which year is given by slider
+    if (this.value == 2006){
+      dataset = year_2006_in;
+      console.log(dataset)
+    }  
+    else if (this.value == 2009)
+      dataset = year_2009_in;
+    else if (this.value == 2012)
+      dataset = year_2012_in;
+    else
+      dataset = year_2003_in;
+
+    fill_dec(dataset)
+        
+
+    graph.updateChoropleth(dataset)
+}
+
+
+//to be used variable  
+temp_data = [];
+
+
+//function to create data variable for BarChart
+function MakeBarChart(landcode){
+
+  temp_data[0] = {year: 2003, in_year : year_2003_in[landcode].in_year};
+
+  temp_data[1] = {year: 2006, in_year : year_2006_in[landcode].in_year};
+
+  temp_data[2] = {year: 2009, in_year : year_2009_in[landcode].in_year};
+
+  temp_data[3] = {year: 2012, in_year : year_2012_in[landcode].in_year};
+
+  data = temp_data;
+
+  console.log(data)
+
+  //delete svg
+  //d3.select(".chart").remove();   
+  
+//create margins
+  var margin = {top: 20, right: 30, bottom: 30, left: 40},
+      width = 960 - margin.left - margin.right,
+      height = 500 - margin.top - margin.bottom;
+
+  var x = d3.scale.ordinal()
+      .rangeRoundBands([0, width], .1);
+
+  var y = d3.scale.linear()
+      .range([height, 0]);
+
+  var xAxis = d3.svg.axis()
+      .scale(x)
+      .orient("bottom");
+
+  var yAxis = d3.svg.axis()
+      .scale(y)
+      .orient("left");  
+
+//create new svg
+  var chart = d3.select("body")
+                  .append("svg")
+                    .attr("class", "chart")
+                    .attr("width", width + margin.left + margin.right)
+                    .attr("height", height + margin.top + margin.bottom)
+                  .append("g")
+                    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+    
+  x.domain(data.map(function(d) { return d.year; }));
+  y.domain([0, d3.max(data, function(d) { return parseFloat(d.in_year); })]);
+
+  chart.append("g")
+        .attr("class", "x axis")
+        .attr("transform", "translate(0," + height + ")")
+        .call(xAxis);
+
+  chart.append("g")
+        .attr("class", "y axis")
+        .call(yAxis);
+
+  chart.selectAll(".bar")
+        .data(data)
+      .enter().append("rect")
+        .attr("class", "bar")
+        .attr("x", function(d) { return x(d.year); })
+        .attr("y", function(d) {return y(parseFloat(d.in_year)); })
+        .attr("height", function(d) { return height - y(parseFloat(d.in_year)); })
+        .attr("width", x.rangeBand());
+
+
+  function type(d) {
+    d.value = +d.value; // coerce to number
+    return d;
+  }
+}
 
 });
+
+
+
+
+
+
 
 
 

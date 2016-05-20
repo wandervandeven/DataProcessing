@@ -1,6 +1,3 @@
-
-
-
 var country_codes = [
       ["af", "AFG", "Afghanistan"],
       ["ax", "ALA", "Åland Islands"],
@@ -253,44 +250,20 @@ var country_codes = [
       ["zw", "ZWE", "Zimbabwe"]
     ];
 
-console.log(country_codes[1][2])
 
-var full_data = {};
-
-var data; // a global
-
-d3.json("meat_consumption.json", function(error, json) {
+d3.json("students_ready.json", function(error, json) {
   if (error) return console.warn(error);
   data = json;
-  
 
-      for (i = 0; i < data.length; i++)
-      {
-            if (data[i].meat > 120)
-                  data[i]["fillKey"] = '7';
-            else if (data[i].meat > 105)
-                  data[i]["fillKey"] = '6';
-            else if (data[i].meat > 85)
-                  data[i]["fillKey"] = '5';
-            else if (data[i].meat > 65)
-                  data[i]["fillKey"] = '4';
-            else if (data[i].meat > 45)
-                  data[i]["fillKey"] = '3';
-            else if (data[i].meat > 25)
-                  data[i]["fillKey"] = '2';
-            else
-                  data[i]["fillKey"] = '1';
-      }
+  full_data = []
 
-
-      //append de countrycode in de lijst
-      for (i = 0; i < data.length; i++)
+  for (i = 0; i < data.length; i++)
       { 
         //ga door de lijst van alle landen (met countrycodes)
         for (j = 0; j < country_codes.length; j++)
         { 
           //als landnamen overeenkomen  
-          if (data[i].Country === country_codes[j][2])
+          if (data[i].country === country_codes[j][2])
           {
             //neem de kleur
             full_data[country_codes[j][1]] = data[i];
@@ -298,57 +271,78 @@ d3.json("meat_consumption.json", function(error, json) {
         }
       }
 
+window.onload = function () {
+	
 
 
-      console.log(data[1].meat);
-      //maak map aan
-      $("#container1").datamap({
-         scope: 'europe',
-         geography_config: {
-           borderColor: 'rgba(255,255,255,0.3)',
-           //highlight het land
-           highlightFillColor: 'orange',
-           //highlight om het land
-           highlightBorderColor: 'rgba(0,0,0,0.5)',
-           //textvak invoegen
-           popupTemplate: _.template([
-             '<div class="hoverinfo">',
-             '<% if (data.Country) { } %>',
-             '<b> <%= geography.properties.name %> </b> <br>',
-             'Meatconsumption: <%= data.meat %><br/> <% } %>',
-             '<% if (data.meat) { %>',
-             
-             
-             
-             '</div>'
-            ].join('') )
-         },
-        //fill per schaal
-        fills: {
-            '1' : "#fff5f0",
-            '2' : '#fee0d2',
-            '3' : '##fcbba1',
-            '4' : '#fc9272',
-            '5' : '#fb6a4a',
-            '6' : '#ef3b2c',
-            '7' : '#67000d',
-            defaultFill: 'black' 
-         },
-         data: full_data
-         });
+		//initial value of dataPoints 
+		var dps = [
+		{label: "2003 in", y: country.in_2003},
+		{label: "2003 out", y: country.out_2003},
+		{label: "2006 in", y: country.in_2006},
+		{label: "2006 out", y: country.out_2006},
+		{label: "2009 in", y: country.in_2009},
+		{label: "2009 out", y: country.out_2009}
+		{label: "2012 in", y: country.in_2012},
+		{label: "2012 out", y: country.out_2012}
+		];	
 
-});
+		var chart = new CanvasJS.Chart("chartContainer",{			
+			title: {
+				text: "Number of Students coming in and going abroad"		
+			},
+			axisY: {				
+				suffix: " C"
+			},		
+			legend :{
+				verticalAlign: 'bottom',
+				horizontalAlign: "center"
+			},
+			data: [
+			{
+				type: "column",	
+				bevelEnabled: true,				
+				indexLabel: "{y} C",
+				dataPoints: dps					
+			}
+			]
+		});
 
+		
+		var updateInterval = 1000;	
+		
 
+		var updateChart = function () {
 
-
-
-
-
-
-
+			for (var i = 0; i < dps.length; i++) {
+				
+				// generating random variation deltaY
+				var deltaY = Math.round(2 + Math.random() *(-2-2));				
+				var yVal = deltaY + dps[i].y > 0 ? dps[i].y + deltaY : 0;
+				var boilerColor;
 
 
+				// color of dataPoint dependent upon y value. 
+
+				boilerColor =
+				yVal > 200 ? "#FF2500":
+				yVal >= 170 ? "#FF6000":
+				yVal < 170 ? "#6B8E23 ":							
+				null;
 
 
+				// updating the dataPoint
+				dps[i] = {label: "boiler"+(i+1) , y: yVal, color: boilerColor};
 
+			};
+
+			chart.render();
+		};
+		
+		updateChart();		
+
+		// update chart after specified interval 
+		setInterval(function(){updateChart()}, updateInterval);
+
+
+	}

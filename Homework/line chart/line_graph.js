@@ -61,6 +61,11 @@ d3.json("data_ready.json", function(error, json) {
       .attr("class", "line")
       .attr("d", line);
 
+
+  var selectthegraphs = $('.thegraph').not(this);     //select all the rest of the lines, except the one you are hovering on and drop their opacity
+          d3.selectAll(selectthegraphs)
+            .style("opacity",0.2);
+
 });
 
 function type(d) {
@@ -72,6 +77,8 @@ return d;
 canvas.onclick = function(evt){
     var activePoints = myLineChart.getPointsAtEvent(evt);
   }
+
+
 
 
 
