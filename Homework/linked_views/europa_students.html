@@ -1,76 +1,30 @@
 <!DOCTYPE html>
 
-<meta charset="utf-8">
-<style>
-
-body {
-  font: 10px sans-serif;
-}
-
-.axis path,
-.axis line {
-  fill: none;
-  stroke: #000;
-  shape-rendering: crispEdges;
-}
-
-.x.axis path {
-  display: none;
-}
-
-.line {
-  fill: none;
-  stroke: steelblue;
-  stroke-width: 1.5px;
-}
-
-.chart rect {
-  fill: steelblue;
-}
-
-.chart text {
-  fill: white;
-  font: 10px sans-serif;
-  text-anchor: end;
-}
-
-</style>
-
-
-
 
 
 <html>
     <head>
-        <h1><center>International Students per Country per Year<center></h1>
-        
-        
-        
+        <h1><center>Tourism and its causes<center></h1>
+
     </head>
     <body>
-        
-        
-        <!-- Datamaps Source -->
-        <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-        <script src="slider.js"></script>
-        <script src="topojson.js"></script>
-        <script src="world.js"></script>
-        <svg class="chart"></svg>
-        <div id="container1" style="height: 500px; width: 960px"></div>
+      <textarea>
+        Proposal
+Ik wil kijken of bepaalde factoren van invloed zijn op de stroom van toeristen. Welke toeristen komen veel naar Nederland en waar gaan Nederlandse toeristen juist naartoe? 
+Ik wil Europa visualiseren met kleurcontrasten die aangeven in welke mate toeristen uit welke gebieden naar een land in Europa komen. Daarbij wil ik kijken of het feit dat landen aan elkaar grenzen meespeelt, of dat landen dezelfde talen spreken. En als meest interessante onderdeel wil ik bij de kleuring van de landen in Europa de goedkoopste ticketprijzen per land aangeven. Zodoende hoop ik dat daarmee een conclusie kan worden getrokken of ik een trend zie tussen ticketprijzen en toeristenstromen. Op deze manier zouden landen beter kunnen marketen op hun potentiele toeristen stromen.
+Features
+Naast de visualisatie van Europa die bij klik op een land aangeven vanuit welke landen de toeristenkomen, wil ik 2 barcharts maken die aangeven wat de top 10 hofleveranciers zijn en wat de ticketprijzen zijn. 
+In de standaardvisualisatie zal al een trend te zien zijn tussen aangrenzende landen, en in de 2e optie van de kaart van Europa wil ik kunnen laten zien of de trek van toeristen naar aangrenzende landen overeenkomt met het feit dat men daar dezelfde talen spreekt. 
 
-        <script src="europa_students.js"></script>
-        <h2>Slide to assign new values to the js variable 'a'</h2>
-        
-        <input id="slide" type="range" min="2003" max="2012" value="2003" step="3">
-        <div id="sliderAmount"></div>
-        <div id="chartContainer" style="height:300px; width:100%;"></div>
-        
-        <input type="checkbox" class="switch" id="cb" />
-        <label for="cb"></label>
+Datasets
+Eurostat
 
-        
-          
-    </body>
+Problems
+Indien blijkt dat er helemaal geen trend is in enig van mijn variabelen. Indien de barcharts niet goed met elkaar corresponderen.
+
+Similar projects
+http://data.worldbank.org/indicator/ST.INT.ARVL/countries?display=map
+</textarea>
 </html>
 
 
